@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
+  sweet : boolean = false;
+  salty : boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+    this.sweet = localStorage.getItem("sweet") != null;
+    this.salty = localStorage.getItem("salty") != null;
+  }
+
+  updateSalty(){
+    if(this.salty)
+      localStorage.setItem("salty", "true");
+    else
+      localStorage.removeItem("salty");
+  }
+
+  updateSweet(){
+    if(this.sweet)
+      localStorage.setItem("sweet", "true");
+    else
+      localStorage.removeItem("sweet");
   }
 
 }
