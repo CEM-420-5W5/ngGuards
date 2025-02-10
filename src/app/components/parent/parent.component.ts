@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { MatCheckbox } from '@angular/material/checkbox';
+import { MatInput } from '@angular/material/input';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-parent',
+  standalone: true,
+  imports: [RouterOutlet,MatCheckbox,FormsModule ],
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.css']
 })
